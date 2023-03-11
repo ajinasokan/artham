@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="lightText">#FFF</color>
+    <color name="lightDivider">#EEEEEE</color>
+
+    <color name="darkText">#000</color>
+    <color name="darkDivider">#222</color>
+</resources>

@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="0dp"
+    tools:context="com.innoventionist.artham.DictionaryActivity">
+
+    <View
+        android:id="@+id/statusBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/searchwraper"
+            android:layout_below="@id/statusBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="അർത്ഥം"
+                android:textAlignment="center"
+                android:textColor="?attr/textColor"
+                android:textSize="32sp" />
+
+            <LinearLayout
+                    android:background="?attr/cardShape"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/searchIcon"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/search" />
+
+                    <SearchView
+                        android:id="@+id/searchView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:iconifiedByDefault="false"
+                        android:imeOptions="actionSearch"
+                        android:queryHint="Type or copy word"
+                        android:textSize="18sp" />
+
+                    <ImageButton
+                        android:id="@+id/voice"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/mic" />
+
+                    <ImageButton
+                        android:id="@+id/clearquery"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/clear"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+        </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/recentsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchwraper"
+        android:layout_marginTop="0dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/recentsTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp"
+                                android:layout_weight="1"
+                                android:paddingLeft="32dp"
+                                android:paddingTop="16dp"
+                                android:text="Recent Searches"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                 />
+
+                            <ImageView
+                                android:id="@+id/clearHistory"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingRight="32dp"
+                                android:paddingTop="16dp"
+                                android:src="@drawable/delete"
+                                android:tint="?attr/textColor" />
+
+                        </LinearLayout>
+
+                        <ListView
+                            android:id="@+id/recentsListView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="0dp"
+                            android:layout_marginLeft="24dp"
+                            android:layout_marginRight="24dp"
+                            android:divider="?attr/dividerColor"
+                            android:dividerHeight="1dp"
+                            android:footerDividersEnabled="false"
+                            android:overScrollFooter="@android:color/transparent"
+                            tools:listitem="@layout/listitem" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="16dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/bookmarksTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:layout_weight="1"
+                            android:paddingLeft="32dp"
+                            android:paddingTop="16dp"
+                            android:text="Bookmarks"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            />
+
+                        <ListView
+                            android:id="@+id/bookmarksListView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="0dp"
+                            android:layout_marginLeft="24dp"
+                            android:layout_marginRight="24dp"
+                            android:divider="?attr/dividerColor"
+                            android:dividerHeight="1dp"
+                            android:footerDividersEnabled="false"
+                            android:overScrollFooter="@android:color/transparent"
+                            tools:listitem="@layout/listitem" />
+
+                    </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/suggestionsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchwraper"
+        android:layout_marginTop="0dp"
+        android:visibility="gone"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/suggestionsTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:layout_weight="1"
+                            android:paddingLeft="32dp"
+                            android:paddingTop="16dp"
+                            android:text="Recent Searches"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            />
+
+                    </LinearLayout>
+
+                    <ListView
+                        android:id="@+id/suggestionsListView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="24dp"
+                        android:divider="?attr/dividerColor"
+                        android:dividerHeight="1dp"
+                        android:footerDividersEnabled="false"
+                        android:overScrollFooter="@android:color/transparent"
+                        tools:listitem="@layout/listitem" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/meaningsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchwraper"
+        android:layout_marginTop="0dp"
+        android:fillViewport="true"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/meaningsTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp"
+                                android:paddingLeft="32dp"
+                                android:paddingTop="16dp"
+                                android:text=""
+                                android:layout_weight="1"
+                                android:textColor="?attr/textColor"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                />
+
+                            <ImageView
+                                android:id="@+id/speak"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingRight="32dp"
+                                android:paddingTop="16dp"
+                                android:src="@drawable/speak"
+                                android:tint="?attr/textColor" />
+
+                            <ImageView
+                                android:id="@+id/bookmarkButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingRight="32dp"
+                                android:paddingTop="16dp"
+                                android:src="@drawable/bookmark_false"
+                                android:tint="?attr/textColor" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/meaningView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:layout_marginLeft="32dp"
+                            android:layout_marginRight="32dp"
+                            android:layout_marginTop="8dp"
+                            android:textColor="?attr/textColor"
+                            android:textIsSelectable="true"
+                            android:textSize="20sp"
+                            />
+
+                    </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/material_design_android_floating_action_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="12dp"
+        android:layout_marginRight="16dp"
+        fab:menu_animationDelayPerItem="55"
+        fab:menu_backgroundColor="@android:color/transparent"
+        fab:menu_buttonSpacing="0dp"
+        fab:menu_colorNormal="#555"
+        fab:menu_colorPressed="#666"
+        fab:menu_colorRipple="#888"
+        fab:menu_fab_label="Designed with"
+        fab:menu_fab_size="normal"
+        fab:menu_icon="@drawable/fav"
+        fab:menu_labels_colorNormal="#333"
+        fab:menu_labels_colorPressed="#444"
+        fab:menu_labels_colorRipple="#66efecec"
+        fab:menu_labels_cornerRadius="3dp"
+        fab:menu_labels_ellipsize="none"
+        fab:menu_labels_hideAnimation="@anim/fab_slide_out_to_right"
+        fab:menu_labels_margin="0dp"
+        fab:menu_labels_maxLines="-1"
+        fab:menu_labels_padding="8dp"
+        fab:menu_labels_position="left"
+        fab:menu_labels_showAnimation="@anim/fab_slide_in_from_right"
+        fab:menu_labels_showShadow="false"
+        fab:menu_labels_singleLine="false"
+        fab:menu_labels_textColor="#f2f1f1"
+        fab:menu_labels_textSize="15sp"
+        fab:menu_openDirection="up"
+        fab:menu_showShadow="true"
+        fab:menu_shadowColor="@android:color/transparent">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/toggle_theme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/theme"
+            fab:fab_colorNormal="#555"
+            fab:fab_colorPressed="#666"
+            fab:fab_colorRipple="#888"
+            fab:fab_label="Toggle Theme"
+            fab:fab_size="mini"
+            app:fab_shadowColor="@android:color/transparent"/>
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/rate_app"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/star"
+            fab:fab_colorNormal="#555"
+            fab:fab_colorPressed="#666"
+            fab:fab_colorRipple="#888"
+            fab:fab_label="Rate app"
+            fab:fab_size="mini"
+            app:fab_shadowColor="@android:color/transparent"/>
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/share_app"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/share"
+            fab:fab_colorNormal="#555"
+            fab:fab_colorPressed="#666"
+            fab:fab_colorRipple="#888"
+            fab:fab_label="Share app"
+            fab:fab_size="mini"
+            app:fab_shadowColor="@android:color/transparent"/>
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/visit_website"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/link"
+            fab:fab_colorNormal="#555"
+            fab:fab_colorPressed="#666"
+            fab:fab_colorRipple="#888"
+            fab:fab_label="Visit my website"
+            fab:fab_size="mini"
+            app:fab_shadowColor="@android:color/transparent"/>
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+</RelativeLayout>

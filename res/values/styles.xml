@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <attr format="reference" name="textColor"/>
+    <attr format="reference" name="dividerColor"/>
+    <attr format="reference" name="cardShape"/>
+
+    <style name="AppThemeLight" parent="@android:style/Theme.DeviceDefault.Light.NoActionBar">
+        <item name="android:textCursorDrawable">@drawable/cursor</item>
+        <item name="textColor">@color/darkText</item>
+        <item name="dividerColor">@color/lightDivider</item>
+        <item name="cardShape">@drawable/shape</item>
+    </style>
+
+    <style name="AppThemeDark" parent="@android:style/Theme.DeviceDefault.NoActionBar">
+        <item name="textColor">@color/lightText</item>
+        <item name="dividerColor">@color/darkDivider</item>
+        <item name="cardShape">@drawable/shape_dark</item>
+    </style>
+</resources>

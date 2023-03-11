@@ -1,0 +1,4 @@
+build/
+
+olam/*.csv
+olam/*.txt
